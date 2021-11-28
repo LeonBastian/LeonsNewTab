@@ -1,0 +1,18 @@
+{
+  "name": "Leon's New Tab",
+  "description": "Overrides the default new tab page with a customizable page",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": { 
+    "128": "icon128.png" 
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "chrome_url_overrides" : {
+    "newtab": "content/index.html"
+  }
+}
