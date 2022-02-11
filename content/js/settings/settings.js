@@ -88,9 +88,10 @@ function saveUploadLink(responseParam){
 function changePicToDark() {
 	var key = "background-type";
 	var value = "dark";
-	chrome.storage.sync.set({key: value}, function() {
+	/*chrome.storage.sync.set({key: value}, function() {
 	  console.log('Value for background-type is set to ' + value);
-	});
+	});*/
+	localStorage.setItem(key, value);
 	document.getElementById("bodyid").style.backgroundImage = "";
 	document.getElementById("setting-pic-weekly-icon").style.color = "white";
 	document.getElementById("setting-pic-own-icon").style.color = "white";
@@ -102,9 +103,10 @@ function changePicToDark() {
 function changePicToWeekly() {
 	var key = "background-type";
 	var value = "weekly";
-	chrome.storage.sync.set({key: value}, function() {
+	/*chrome.storage.sync.set({key: value}, function() {
 	  console.log('Value for background-type is set to ' + value);
-	});
+	});*/
+	localStorage.setItem(key, value);
 	document.getElementById("setting-pic-dark-icon").style.color = "white";
 	document.getElementById("setting-pic-own-icon").style.color = "white";
 	document.getElementById("setting-pic-weekly-icon").style.color = "yellow";
@@ -118,9 +120,10 @@ function changePicToWeekly() {
 function changePicToOwn() {
 	var key = "background-type";
 	var value = "own";
-	chrome.storage.sync.set({key: value}, function() {
+	/*chrome.storage.sync.set({key: value}, function() {
 	  console.log('Value for background-type is set to ' + value);
-	});
+	});*/
+	localStorage.setItem(key, value);
 	document.getElementById("setting-pic-dark-icon").style.color = "white";
 	document.getElementById("setting-pic-weekly-icon").style.color = "white";
 	document.getElementById("setting-pic-own-icon").style.color = "yellow";
