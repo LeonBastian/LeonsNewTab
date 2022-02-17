@@ -19,6 +19,9 @@ function setBody() {
 		localStorage.setItem("installed", "true");
 	}	
 	
+	//SET REMINDER
+	document.getElementById("reminder").value = localStorage.getItem("reminder");
+	
 	//SET BACKGROUND
 	var backgroundType = localStorage.getItem("background-type");
 	

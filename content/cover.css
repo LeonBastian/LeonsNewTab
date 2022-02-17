@@ -139,3 +139,35 @@ body {
 .setting-icon:hover {
 	color: white;
 }
+
+.input-reminder {
+	background-color: rgb(0 0 0 / 0%);
+	color: #ffffff;
+	text-align: center;
+	font-size: 50px;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
+}
+
+.input-reminder:focus {
+	background-color: rgb(0 0 0 / 0%);
+	color: #ffffff;
+	text-align: center;
+	font-size: 50px;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
+	border-color: #ffffff;
+}
+
+.input-group-lg {
+	border-radius: 0;
+}
+
+.input-group-lg:focus {
+	border-radius: 0;
+	border-color: #ffffff;
+}
