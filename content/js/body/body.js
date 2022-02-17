@@ -11,15 +11,24 @@ for (var i = 0; i < allEditLinks.length; i++){
 
 function setBody() {
 	
+	var isInstalled = localStorage.getItem("installed");
+	if(isInstalled == null) {
+		var key = "background-type";
+		var value = "weekly";
+		localStorage.setItem(key, value);
+		localStorage.setItem("installed", "true");
+	}	
+	
 	//SET BACKGROUND
-	chrome.storage.sync.get(['key'], function(result) {
-		if(result.key == "dark"){
+	var backgroundType = localStorage.getItem("background-type");
+	
+	if(backgroundType == "dark"){
 			//display active item in settings offcanvas
 			document.getElementById("setting-pic-dark-icon").style.color = "yellow";
 			document.getElementById("footer-piccredit").style.display = "none";
 			document.getElementById("footer-deleteinfo").style.display = "none";
 		} 
-		else if(result.key == "weekly") {
+		else if(backgroundType == "weekly") {
 			var picurl = "http://api.leonstab.leon.cx/weekly";
 			document.getElementById("bodyid").style.backgroundImage = "url('"+picurl+"')";
 			document.getElementById("bodyid").style.backgroundRepeat = "no-repeat";
@@ -31,7 +40,7 @@ function setBody() {
 			document.getElementById("footer-piccredit").style.display = "block";
 			document.getElementById("footer-deleteinfo").style.display = "none";
 		}
-		else if(result.key == "own") {
+		else if(backgroundType == "own") {
 			var imageLink = localStorage.getItem("background-image-url");
 			console.log(imageLink);
 			document.getElementById("bodyid").style.backgroundImage = "url('"+imageLink+"')";
@@ -46,9 +55,8 @@ function setBody() {
 			document.getElementById("footer-deleteinfo").style.display = "block";
 			
 		}
-	});
 	
-	
+		
 	//SET BOOKMARKS / QUICKLINKS
 	setBookmarksInBody();
 }
